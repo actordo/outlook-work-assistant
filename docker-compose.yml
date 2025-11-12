@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  outlook-assistant:
+    build: .
+    image: outlook-assistant:latest
+    container_name: outlook-assistant
+    environment:
+      - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+      - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+      - AZURE_TENANT_ID=${AZURE_TENANT_ID}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OUTLOOK_USER_EMAIL=${OUTLOOK_USER_EMAIL}
+      - AI_MODEL=${AI_MODEL:-gpt-4}
+      - AI_TEMPERATURE=${AI_TEMPERATURE:-0.7}
+    env_file:
+      - .env
+    volumes:
+      - ./token_cache.bin:/app/token_cache.bin
+    command: list --limit 10
+    networks:
+      - outlook-network
+
+networks:
+  outlook-network:
+    driver: bridge
