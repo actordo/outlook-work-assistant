@@ -17,6 +17,8 @@ It’s a smart **AI productivity assistant** that understands your workflow, aut
 
 ## 💼 Designed for Outlook Professionals
 
+[Download from AppSource](https://appsource.microsoft.com/en-ie/product/Office365/WA200009519)
+
 Whether you use **Outlook Web**, **Outlook Desktop**, or **Microsoft 365**,  
 the Outlook Work Assistant integrates seamlessly with your existing tools — no complicated setup required.
 
